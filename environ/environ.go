@@ -53,12 +53,12 @@ func Repo(repo *drone.Repo) map[string]string {
 		// these are legacy configuration parameters for backward
 		// compatibility with drone 0.8. These are deprecated and
 		// should not be relied upon going forward.
-		"CI_REPO":         repo.Slug,
-		"CI_REPO_NAME":    repo.Slug,
-		"CI_REPO_LINK":    repo.Link,
-		"CI_REPO_REMOTE":  repo.HTTPURL,
-		"CI_REMOTE_URL":   repo.HTTPURL,
-		"CI_REPO_PRIVATE": fmt.Sprint(repo.Private),
+		// "CI_REPO":         repo.Slug,
+		// "CI_REPO_NAME":    repo.Slug,
+		// "CI_REPO_LINK":    repo.Link,
+		// "CI_REPO_REMOTE":  repo.HTTPURL,
+		// "CI_REMOTE_URL":   repo.HTTPURL,
+		// "CI_REPO_PRIVATE": fmt.Sprint(repo.Private),
 	}
 }
 
@@ -133,23 +133,23 @@ func Build(build *drone.Build) map[string]string {
 		// these are legacy configuration parameters for backward
 		// compatibility with drone 0.8. These are deprecated and
 		// should not be relied upon going forward.
-		"CI_BUILD_NUMBER":         fmt.Sprint(build.Number),
-		"CI_PARENT_BUILD_NUMBER":  fmt.Sprint(build.Parent),
-		"CI_BUILD_CREATED":        fmt.Sprint(build.Created),
-		"CI_BUILD_STARTED":        fmt.Sprint(build.Started),
-		"CI_BUILD_FINISHED":       fmt.Sprint(build.Finished),
-		"CI_BUILD_STATUS":         build.Status,
-		"CI_BUILD_EVENT":          build.Event,
-		"CI_BUILD_LINK":           build.Link,
-		"CI_BUILD_TARGET":         build.Deploy,
-		"CI_COMMIT_SHA":           build.After,
-		"CI_COMMIT_REF":           build.Ref,
-		"CI_COMMIT_BRANCH":        build.Target,
-		"CI_COMMIT_MESSAGE":       build.Message,
-		"CI_COMMIT_AUTHOR":        build.Author,
-		"CI_COMMIT_AUTHOR_NAME":   build.AuthorName,
-		"CI_COMMIT_AUTHOR_EMAIL":  build.AuthorEmail,
-		"CI_COMMIT_AUTHOR_AVATAR": build.AuthorAvatar,
+		// "CI_BUILD_NUMBER":         fmt.Sprint(build.Number),
+		// "CI_PARENT_BUILD_NUMBER":  fmt.Sprint(build.Parent),
+		// "CI_BUILD_CREATED":        fmt.Sprint(build.Created),
+		// "CI_BUILD_STARTED":        fmt.Sprint(build.Started),
+		// "CI_BUILD_FINISHED":       fmt.Sprint(build.Finished),
+		// "CI_BUILD_STATUS":         build.Status,
+		// "CI_BUILD_EVENT":          build.Event,
+		// "CI_BUILD_LINK":           build.Link,
+		// "CI_BUILD_TARGET":         build.Deploy,
+		// "CI_COMMIT_SHA":           build.After,
+		// "CI_COMMIT_REF":           build.Ref,
+		// "CI_COMMIT_BRANCH":        build.Target,
+		// "CI_COMMIT_MESSAGE":       build.Message,
+		// "CI_COMMIT_AUTHOR":        build.Author,
+		// "CI_COMMIT_AUTHOR_NAME":   build.AuthorName,
+		// "CI_COMMIT_AUTHOR_EMAIL":  build.AuthorEmail,
+		// "CI_COMMIT_AUTHOR_AVATAR": build.AuthorAvatar,
 	}
 	if isBuildFailing(build) {
 		env["DRONE_BUILD_STATUS"] = "failure"
